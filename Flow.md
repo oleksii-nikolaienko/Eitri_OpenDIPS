@@ -2,7 +2,7 @@
   flowchart LR
       
       done(Done)
-      style done fill:#00ff00
+      style done fill:#1B9E7780
       
       subgraph DIPS
         direction LR
