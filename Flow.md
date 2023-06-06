@@ -1,5 +1,5 @@
 ```mermaid
-  graph TB;
+  flowchart TB;
       subgraph DIPS
         direction LR;
         create_appoint(Appointment is created)-->when_updated{Was the patient\nrecord updated\nrecently?};
