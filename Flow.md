@@ -1,9 +1,7 @@
 ```mermaid
   graph TD;
-      A-->B;
-      A-->C;
+      create_appoint(Appointment is created)-->B;
       B-->D;
-      C-->D;
 ```
 
 
