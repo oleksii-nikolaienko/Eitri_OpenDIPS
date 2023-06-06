@@ -13,6 +13,7 @@
         post_form --> notify(Update notifications\nare sent);
         
       end
+  end
 ```
 
 
