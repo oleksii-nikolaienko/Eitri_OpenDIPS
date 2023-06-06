@@ -1,8 +1,9 @@
 ```mermaid
-  graph TD;
+  graph LR;
       create_appoint(Appointment is created)-->when_updated{Was the patient record\nupdated recently?};
-      subgraph one
-        when_updated-->a2
+      subgraph DIPS
+        when_updated -- Yes --> done(done)
+        when_updated -- No --> fetch_info(Personal information\nis fetched from the database)
       end
       B-->B{Is it?};
 ```
