@@ -1,29 +1,28 @@
 ```mermaid
   flowchart TB
+      
+      done(Done)
+      
       subgraph DIPS
-      direction LR
+        direction LR
         create_appoint(Appointment is created)-->when_updated{Was the patient\nrecord updated\nrecently?}
-        when_updated -- Yes --> done(Done)
+        
         when_updated -- No --> fetch_info(Personal information\nis fetched from the database)
         fetch_info --> create_form(Form with personal\ninformation is created)
+        db[(Database)] --> create_form
       end
+      
       subgraph HelseNorge
-        create_form --> post_form(Form is posted\nat HelseNorge)
-        post_form --> notify(Update notifications\nare sent)
+        direction LR
+        post_form(Form is posted\nat HelseNorge) --> notify(Update notifications\nare sent)
+        notify --> edit(User edits and/or\napproves information)
+        edit --> send_back(Form information is\nsent back to DIPS)
         
       end
-```
-
-```mermaid
-flowchart TB
-    c1-->a2
-    subgraph one
-    a1-->a2
-    end
-    subgraph two
-    b1-->b2
-    end
-    subgraph three
-    c1-->c2
-    end
+      
+      when_updated -- Yes --> done
+      create_form --> post_form
+      send_back --> db
+      send_back --> done
+      
 ```
