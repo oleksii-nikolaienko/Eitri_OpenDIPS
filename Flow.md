@@ -10,6 +10,8 @@
       subgraph HelseNorge
         direction TB;
         create_form --> post_form(Form is posted\nat HelseNorge);
+        post_form --> notify(Update notifications\nare sent);
+        
       end
 ```
 
