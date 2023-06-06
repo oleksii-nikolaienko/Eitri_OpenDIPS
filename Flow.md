@@ -1,7 +1,8 @@
 ```mermaid
-  flowchart TB
+  flowchart LR
       
       done(Done)
+      style done fill:#00ff00
       
       subgraph DIPS
         direction LR
