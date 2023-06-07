@@ -10,7 +10,7 @@
         style create_appoint fill:#0000ff80
         when_updated -- No --> fetch_info(Personal information\nis fetched from the database)
         fetch_info --> create_form(Form with personal\ninformation is created)
-        db[(Database)] --> create_form
+        db[(Database)] --> fetch_info
       end
       
       subgraph HelseNorge
